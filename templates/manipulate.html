@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Admin Panel</h1>
+              <span class="subheading">Manage your books and change them</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+<hr>
+         
+          <hr>
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h1>Basic Actions</h1>
+          
+           <a href="/addbook">  <button class="btn btn-primary"> Add a new book</button></a>
+           <a href="/adminlogout">  <button class="btn btn-primary"> Logout</button></a>
+<hr>
+         
+          <hr>
+<h1>Edit Posts</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">BookName</th>
+      <th scope="col">Author Name</th>
+      <th scope="col">Publisher</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+    {% set i = 1 %}
+    {% for book in books %}
+
+    <tr>
+      <th scope="row">{{book.sno}}</th>
+      <td>{{book.bookname}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.publisher}}</td>
+      <td>{{book.quantity}}</td>
+      <td>{{book.date}}</td>
+        <td><a href="/edit/{{book.sno}}"><button class="btn btn-primary" >Edit</button></a></td>
+        <td><a href="/delete/{{book.sno}}"><button class="btn btn-primary">Delete</button></a></td>
+      </tr>
+      
+     {% set i = i + 1 %}
+
+     {% endfor %}
+    
+
+  </tbody>
+</table>
+<div class="clearfix">
+          
+            
+            <a class="btn btn-primary float-left" href="{{prev}}"> &larr;Previous</a>
+            <a class="btn btn-primary float-right" href="{{next}}">Next &rarr;</a>
+          </div>
+
+          </div>
+
+</div>
+
+
+      
+        </div>
+    
+
+
+
+
+            
+
+{% endblock %}

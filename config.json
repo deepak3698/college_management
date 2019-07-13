@@ -1,0 +1,26 @@
+{
+  "params":
+  {
+    "local_server":"True",
+    "local_uri": "mysql://root:@localhost/clg",
+    "prod_uri":"mysql://root:@localhost/clg",
+    "fb_url":"https://facebook.com/alluarjun",
+    "tw_url":"https://twitter.com/dt",
+    "gh_url": "https://github.com/deepak3698",
+    "gmail-user":"your_gmail@gmail.com",
+    "gmail-password":"your_password",
+    "about_text": "!!! And here we will handle About content !!!",
+    "no_of_posts": 20,
+
+    "admin_user":"deepak",
+    "admin_password": "dalave",
+    "student_user":"deepakk",
+    "student_password": "dalave",
+
+
+    "crop_image": "https://www.imgonline.com.ua/eng/crop-photo-into-various-shapes.php"
+
+
+  }
+
+}

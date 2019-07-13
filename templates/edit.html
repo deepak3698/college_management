@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+
+
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+          <h1>Basic Actions</h1>
+          
+           <a href="/manipulate">  <button class="btn btn-primary"> Manipulate</button></a>
+           <a href="/logout">  <button class="btn btn-primary"> Logout</button></a>
+           <hr>
+<h1>Add/Edit Post</h1>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+
+    {% for message in messages %}
+      <div class="alert alert-success" role="alert">
+  {{message}}
+   </div>
+    {% endfor %}
+  {% endif %}
+  {% endwith %}
+ <form name="sentMessage" id="contactForm" action = "\edit\{{books.sno}}" method="post" novalidate>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>BookName</label>
+                <input type="text" class="form-control" placeholder="Title" id="title" name='name' required data-validation-required-message="Please enter your name." value="{{books.bookname}}">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Author Name</label>
+                <input type="text" class="form-control" placeholder="Author" id="title" name='author' required data-validation-required-message="Please enter your name." value="{{books.author}}">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Publisher</label>
+                <input type="text" class="form-control" placeholder="Publisher" id="title" name='publisher' required data-validation-required-message="Please enter your name." value="{{books.publisher}}">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Quantity</label>
+                <input type="text" class="form-control" placeholder="Slug" name="quantity" id="slug" required data-validation-required-message="Please enter your phone number." value="{{books.quantity}}">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+
+
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+            </div>
+          </form>
+
+
+
+
+      
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block body %}
+
+ 
+  
+<div class="container mt-4">
+
+
+
+
+
+<h1>############Detail's of the student who tooked the book########### {{ q }}</h1>
+<br><br><br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">Sudent Name</th>
+      <th scope="col">Bookname Name</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% set i = 1 %}
+    {% for book in books %}
+
+    <tr>
+      <th scope="row">{{book.sno}}</th>
+      <td>{{book.student_name}}</td>
+      <td>{{book.bookname}}</td>
+      <td>{{book.date}}</td>
+      
+    </tr>
+      
+     {% set i = i + 1 %}
+
+     {% endfor %}
+    
+
+  </tbody>
+</table>
+
+
+
+
+
+
+
+<div class="clearfix">
+          
+            
+            <a class="btn btn-primary float-left" href="{{prev}}"> &larr;Previous</a>
+            <a class="btn btn-primary float-right" href="{{next}}">Next &rarr;</a>
+          </div>
+
+          </div>
+
+{% endblock %}

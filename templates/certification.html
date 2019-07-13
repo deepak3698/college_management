@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<div class="container">
+
+
+  <hr class="featurette-divider">
+
+  <div class="row mx-10">
+
+  	<div class="col-sm my-2 border">
+  		<h1>National Council for Teacher Education</h1>
+<img src="{{ url_for('static', filename='img/c1.jpg') }}" class="img-fluid border" alt="Responsive image">
+
+  	</div>
+
+  	<div class="col-sm my-2 border">
+<h1>Title certificate</h1>
+<img src="{{ url_for('static', filename='img/c2.jpg') }}" class="img-fluid border" alt="Responsive image">
+
+  	</div>
+
+   <div class="col-sm my-2 border">
+<h1>Registration Certificate</h1>
+
+  		<img src="{{ url_for('static', filename='img/c3.jpg') }}" class="img-fluid border" alt="Responsive image">
+  	</div>
+
+  </div>
+
+
+
+<div>
+{% endblock %}
